@@ -169,13 +169,10 @@ class Kasumi:
 
         if round_i % 2 == 1:
             state  = self.fun_FL(input, round_i)
-            output = self.fun_FO(state, round_i)
+            return self.fun_FO(state, round_i)
         else:
             state  = self.fun_FO(input, round_i)
-            output = self.fun_FL(state, round_i)
-
-        # assert _bitlen(output) <= 32
-        return output
+            return self.fun_FL(state, round_i)
 
 
     def enc_1r(self, in_left, in_right, round_i):
